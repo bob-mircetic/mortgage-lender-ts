@@ -3,6 +3,7 @@ import {LoanStatus} from "./LoanStatus";
 export default class LoanApplication {
     loanAmount: number;
     loanApproval: string;
+    dti: number;  
     isApproved(): boolean {
         return false;             
     } 
@@ -11,12 +12,13 @@ export default class LoanApplication {
     }
     creditScore: number;
     savings: number;
-    //loanStatus(loanStat:LoanStatus): void;                            
-    //enum LoanStatus {'Pending'};           
-    
-    constructor(){
-        //this.loanAmount = 0;
-    
+    loanStatus: LoanStatus;
         
+    constructor(ploanAmount:number,pdti:number,pcreditScore:number,psavings:number){
+        this.loanAmount = ploanAmount;
+        this.dti = pdti;
+        this.creditScore = pcreditScore;
+        this.savings = psavings;
     }
+
 }
